@@ -25,6 +25,18 @@ mutators.push('customers', { firstName: '', lastName: '' })
 mutators.removeBatch('customers', [0])
 const removed = mutators.remove('customers', 0)
 const shifted = mutators.shift('customers')
+const sort = mutators.sort('customers', (a, b) => {
+  const nameA = a.name.toUpperCase()
+  const nameB = b.name.toUpperCase()
+  if (nameA < nameB) {
+    return -1
+  }
+  if (nameA > nameB) {
+    return 1
+  }
+
+  return 0
+})
 mutators.swap('customers', 0, 1)
 mutators.update('customers', 0, { firstName: '', lastName: '' })
 mutators.unshift('customers', { firstName: '', lastName: '' })

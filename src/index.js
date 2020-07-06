@@ -8,6 +8,7 @@ import push from './push'
 import remove from './remove'
 import removeBatch from './removeBatch'
 import shift from './shift'
+import sort from './sort'
 import swap from './swap'
 import unshift from './unshift'
 import update from './update'
@@ -21,6 +22,7 @@ const mutators: { [string]: Mutator<any> } = {
   remove,
   removeBatch,
   shift,
+  sort,
   swap,
   unshift,
   update

@@ -8,6 +8,7 @@ export const push: Mutator
 export const removeBatch: Mutator
 export const remove: Mutator
 export const shift: Mutator
+export const sort: Mutator
 export const swap: Mutator
 export const update: Mutator
 export const unshift: Mutator
@@ -21,6 +22,7 @@ export interface DefaultType<FormValues = any> {
   removeBatch: Mutator<FormValues>
   remove: Mutator<FormValues>
   shift: Mutator<FormValues>
+  sort: Mutator<FormValues>
   swap: Mutator<FormValues>
   update: Mutator<FormValues>
   unshift: Mutator<FormValues>
@@ -39,6 +41,7 @@ export interface Mutators {
   remove: (name: string, index: number) => any
   removeBatch: (name: string, indexes: Array<number>) => any
   shift: (name: string) => any
+  sort: (name: string, compareFn: (a: any, b: any) => number) => void
   swap: (name: string, indexA: number, indexB: number) => void
   update: (name: string, index: number, value: any) => void
   unshift: (name: string, value: any) => void
